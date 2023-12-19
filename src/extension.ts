@@ -11,7 +11,10 @@ export function activate(context: vscode.ExtensionContext) {
 	console.log('Congratulations, your extension "vscode-open-floating-terminal" is now active!');
 
 	async function createNewTerminal() {
-		await vscode.commands.executeCommand('workbench.action.createTerminalEditor');
+		// await vscode.commands.executeCommand('workbench.action.focusQuickOpen');
+		// await vscode.commands.executeCommand('workbench.action.focusActiveEditorGroup');
+		// await vscode.commands.executeCommand('workbench.action.createTerminalEditor');
+		await vscode.commands.executeCommand('workbench.action.createTerminalEditorSide');
 		await vscode.commands.executeCommand('workbench.action.moveEditorToNewWindow');
 		await vscode.commands.executeCommand('workbench.action.terminal.focus');
 	}
